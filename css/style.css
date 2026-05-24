@@ -54,7 +54,6 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: none;
 }
 
 img,
@@ -76,7 +75,7 @@ button {
   font: inherit;
   border: 0;
   background: none;
-  cursor: none;
+  cursor: pointer;
 }
 
 input,
@@ -203,65 +202,6 @@ h1, h2, h3, h4, h5 {
   background: var(--border);
   border: 0;
   margin: 0;
-}
-
-/* ---------- Custom Cursor ---------- */
-.cursor-dot,
-.cursor-ring {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  will-change: transform;
-}
-
-.cursor-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--text);
-  border-radius: 50%;
-  transition: width 0.2s var(--ease), height 0.2s var(--ease), background 0.2s var(--ease);
-}
-
-.cursor-ring {
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--text);
-  border-radius: 50%;
-  transition: width 0.3s var(--ease), height 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease);
-}
-
-.cursor-dot.hover {
-  width: 14px;
-  height: 14px;
-  background: var(--gold);
-}
-
-.cursor-ring.hover {
-  width: 60px;
-  height: 60px;
-  border-color: var(--gold);
-  background: rgba(201, 168, 76, 0.05);
-}
-
-.cursor-dot.dark {
-  background: var(--bg);
-}
-
-.cursor-ring.dark {
-  border-color: var(--bg);
-}
-
-@media (hover: none) {
-  .cursor-dot,
-  .cursor-ring {
-    display: none;
-  }
-  body, button, a {
-    cursor: auto;
-  }
 }
 
 /* ---------- Navigation ---------- */
@@ -904,7 +844,6 @@ h1, h2, h3, h4, h5 {
   background: #111;
   border: 1px solid rgba(255, 255, 255, 0.08);
   overflow: hidden;
-  cursor: none;
 }
 
 .showreel-frame::before {
@@ -2216,7 +2155,7 @@ h1, h2, h3, h4, h5 {
   font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--text);
-  cursor: none;
+  cursor: pointer;
   transition: color 0.3s var(--ease);
 }
 

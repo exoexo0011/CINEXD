@@ -63,8 +63,8 @@ CINEXD/
 
 Replace all placeholders before going live:
 
-1. **WhatsApp number** — Search-replace `91XXXXXXXXXX` across all `.html` files with your real WhatsApp number (with country code, no `+`). Example: `919876543210`.
-2. **Email** — Search-replace `hello@cinexd.com` with your real address.
+1. **WhatsApp number** — Search-replace `919595482916` across all `.html` files with your real WhatsApp number (with country code, no `+`). Example: `919876543210`.
+2. **Email** — Search-replace `cinexd.work@gmail.com` with your real address.
 3. **Team photos** — Drop into `assets/` and swap the placeholder initials in `about.html`.
 4. **Portfolio thumbnails** — Replace `<div class="portfolio-thumb-text">` placeholders with `<img>` tags pointing to your real thumbnails in `assets/`.
 5. **Instagram reel embeds** — Each portfolio tile and the showreel currently link to the profile (`https://www.instagram.com/cinexd_`). Swap to specific reel URLs as you publish.

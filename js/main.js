@@ -11,60 +11,6 @@
 (function () {
   'use strict';
 
-  /* ---------- Custom Cursor ---------- */
-  function initCursor() {
-    if (window.matchMedia('(hover: none)').matches) return;
-
-    const dot = document.createElement('div');
-    dot.className = 'cursor-dot';
-    const ring = document.createElement('div');
-    ring.className = 'cursor-ring';
-    document.body.append(dot, ring);
-
-    let mx = window.innerWidth / 2;
-    let my = window.innerHeight / 2;
-    let rx = mx;
-    let ry = my;
-
-    document.addEventListener('mousemove', (e) => {
-      mx = e.clientX;
-      my = e.clientY;
-      dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
-    }, { passive: true });
-
-    function loop() {
-      rx += (mx - rx) * 0.18;
-      ry += (my - ry) * 0.18;
-      ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
-      requestAnimationFrame(loop);
-    }
-    loop();
-
-    const hoverSel = 'a, button, [data-cursor="hover"], .filter-btn, .faq-question, .portfolio-card, .service-card';
-    document.addEventListener('mouseover', (e) => {
-      if (e.target.closest(hoverSel)) {
-        dot.classList.add('hover');
-        ring.classList.add('hover');
-      }
-    });
-    document.addEventListener('mouseout', (e) => {
-      if (e.target.closest(hoverSel)) {
-        dot.classList.remove('hover');
-        ring.classList.remove('hover');
-      }
-    });
-
-    // Hide while leaving window
-    document.addEventListener('mouseleave', () => {
-      dot.style.opacity = '0';
-      ring.style.opacity = '0';
-    });
-    document.addEventListener('mouseenter', () => {
-      dot.style.opacity = '';
-      ring.style.opacity = '';
-    });
-  }
-
   /* ---------- Navigation ---------- */
   function initNav() {
     const nav = document.querySelector('.nav');
@@ -235,7 +181,6 @@
 
   /* ---------- Boot ---------- */
   document.addEventListener('DOMContentLoaded', () => {
-    initCursor();
     initNav();
     initFaq();
     initPortfolio();
